@@ -10,6 +10,7 @@ public:
             if(m.find(sec)!=m.end()){
                 return {m[sec],i};
             }
+            
             m[first] = i;
         }
         return {};
