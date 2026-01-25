@@ -3,7 +3,6 @@ public:
     vector<int> runningSum(vector<int>& nums) {
         int n = nums.size();
 
-        int s=0;
         int e=1;
 
         int sum = nums[0];
