@@ -5,14 +5,14 @@ public:
         while (x != 0) {
         int digit = x % 10;
         
-        if (rev > INT32_MAX / 10 || rev < INT32_MIN / 10){
+        if (rev*10 > INT32_MAX || rev*10 < INT32_MIN){
             return 0;
         }
 
         rev = rev * 10 + digit;
         x /= 10;
         }
-        
+
     return rev;
     }
 };
