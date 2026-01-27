@@ -6,17 +6,20 @@ public:
 
         string ans = "";
 
-        for(int i=0;i<n;i++){
+        for (int i = 0; i < n; i++) {
+            if (s[i] == ' ') continue;   // skip spaces
+
             string word = "";
-            while(i<n && s[i]!=' '){
-                word = word + s[i];
+            while (i < n && s[i] != ' ') {
+                word += s[i];
                 i++;
             }
-            reverse(word.begin(),word.end());
-            if(word.length()>0){
-                ans = ans + " " + word;
-            }
+
+            reverse(word.begin(), word.end());
+
+            if (!ans.empty()) ans += " ";
+            ans += word;
         }
-        return ans.substr(1);
+        return ans;
     }
 };
