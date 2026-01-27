@@ -8,7 +8,7 @@ public:
 
         for(int i=0;i<n;i++){
             string word = "";
-            while(s[i]!=' ' && i<n){
+            while(i<n && s[i]!=' '){
                 word = word + s[i];
                 i++;
             }
