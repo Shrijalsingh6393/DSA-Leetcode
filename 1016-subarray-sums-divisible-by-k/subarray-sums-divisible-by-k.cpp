@@ -9,7 +9,7 @@ public:
 
         for(int i=0;i<n;i++){
             cs += nums[i];
-            int r = ((cs % k) + k) % k;
+            int r = ((cs % k)+k)%k;
             if(m.find(r)!=m.end()){
                 count += m[r];
             }
