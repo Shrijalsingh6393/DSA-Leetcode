@@ -10,7 +10,7 @@ public:
     }
     vector<string> topKFrequent(vector<string>& words, int k) {
         int n = words.size();
-        map<string,int>m;
+        unordered_map<string,int>m;
         vector<string>ans;
 
         for(int i=0;i<n;i++){
