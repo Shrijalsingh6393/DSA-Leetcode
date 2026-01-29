@@ -1,6 +1,16 @@
 class Solution {
 public:
+    // int func(vector<int>&cost,int n,int i){
+    //     if(i>=n){
+    //         return 0;
+    //     }
+    //     return cost[i] + min(func(cost,n,i+1),func(cost,n,i+2));
+    // }
+
     int minCostClimbingStairs(vector<int>& cost) {
+        // int n = cost.size();
+        // return min(func(cost,n,0),func(cost,n,1));
+
         int n = cost.size();
 
         vector<int>v(n);
