@@ -11,7 +11,7 @@ public:
                 return {m[sec],i};
             }
             
-            m[first] = i;
+            m[first]=i;
         }
         return {};
     }
