@@ -24,9 +24,9 @@ public:
         dummyE = even;
 
         while(odd->next!=NULL && even->next!=NULL){
-            odd->next = odd->next->next;
+            odd->next = even->next;
             odd = odd->next;
-            even->next = even->next->next;
+            even->next = odd->next;
             even = even->next;
         }
 
