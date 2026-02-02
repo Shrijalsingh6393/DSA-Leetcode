@@ -4,9 +4,15 @@ public:
         stack<char>st;
 
         for(char c : str) {
-        if(c == '(') st.push(')');
-        else if(c == '{') st.push('}');
-        else if(c == '[') st.push(']');
+        if(c == '('){
+            st.push(')');
+        }
+        else if(c == '{'){
+            st.push('}');
+        }
+        else if(c == '['){
+            st.push(']');
+        }
         else {
             if(st.empty() || st.top() != c) return false;
             st.pop();
