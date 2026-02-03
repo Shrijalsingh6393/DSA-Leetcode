@@ -10,8 +10,12 @@ public:
             while(!s.empty() && heights[s.top()] >= heights[i]) {
                 s.pop();
             }
-            if(s.empty()) nse[i] = n; 
-            else nse[i] = s.top();
+            if(s.empty()){
+                nse[i] = n;
+            } 
+            else{
+                nse[i] = s.top();
+            }
             s.push(i);
         }
 
