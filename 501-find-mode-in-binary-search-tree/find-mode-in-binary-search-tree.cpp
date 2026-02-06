@@ -11,7 +11,6 @@
  */
 class Solution {
 public:
-    int maxel = 0;
     unordered_map<int,int>m;
     vector<int> findMode(TreeNode* root) {
         vector<int>ans;
