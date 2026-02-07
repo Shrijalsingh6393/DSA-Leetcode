@@ -1,22 +1,22 @@
 class Solution {
 public:
+    string func(string s){
+        int i = 0;
+        while(i < s.size() && s[i] == ' ') i++;
+        s = s.substr(i);
+
+        int pos = s.find(' ');
+        if(pos==string::npos){return s;}
+
+        string first = s.substr(0,pos);
+        string rest = s.substr(pos+1);
+
+        string res = func(rest);
+
+        if(res.size() == 0) return first;
+        return res + " " + first;
+    }
     string reverseWords(string s) {
-        int n = s.length();
-        reverse(s.begin(),s.end());
-
-        string ans = "";
-
-        for(int i=0;i<n;i++){
-            string word = "";
-            while(i<n && s[i]!=' '){
-                word = word + s[i];
-                i++;
-            }
-            reverse(word.begin(),word.end());
-            if(word.length()>0){
-                ans = ans + " " + word;
-            }
-        }
-        return ans.substr(1);
+        return func(s);
     }
 };
