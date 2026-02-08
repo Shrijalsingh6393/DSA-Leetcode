@@ -19,13 +19,12 @@ public:
             return false;
         }
 
-        return isSymmetric1(a->left,b->right) && isSymmetric1(a->right,b->left);
+        return isSymmetric1(a->left,b->right) && isSymmetric1(a->right,b->left) && (a->val==b->val);
     }
     bool isSymmetric(TreeNode* root) {
         if(root==NULL){
             return true;
         }
-
         return isSymmetric1(root->left,root->right);
     }
 };
