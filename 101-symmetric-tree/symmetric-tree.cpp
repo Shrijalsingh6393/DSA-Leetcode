@@ -11,20 +11,18 @@
  */
 class Solution {
 public:
-    bool isSymmetric1(TreeNode *a,TreeNode *b){
-        if(a==NULL && b==NULL){return true;}
-        if(a==NULL || b==NULL){return false;}
+    bool func(TreeNode* p,TreeNode* q){
+        if(p==NULL && q==NULL){return true;}
+        if(p==NULL || q==NULL){return false;}
 
-        if(a->val!=b->val){
-            return false;
-        }
-
-        return isSymmetric1(a->left,b->right) && isSymmetric1(a->right,b->left) && (a->val==b->val);
+        return func(p->left,q->right) && func(p->right,q->left) && (p->val==q->val);
     }
+
     bool isSymmetric(TreeNode* root) {
         if(root==NULL){
             return true;
         }
-        return isSymmetric1(root->left,root->right);
+
+        return func(root->left,root->right);
     }
 };
