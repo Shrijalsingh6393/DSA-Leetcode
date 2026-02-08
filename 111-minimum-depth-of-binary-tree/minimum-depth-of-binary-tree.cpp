@@ -16,18 +16,18 @@ public:
         return 0;
     }
 
-    int ld = minDepth(root->left);
-    int rd = minDepth(root->right);
+    // int ld = minDepth(root->left);
+    // int rd = minDepth(root->right);
 
     if(root->left==NULL){
-        return 1 + rd;
+        return 1 + minDepth(root->right);
     }
 
     if(root->right==NULL){
-        return 1 + ld;
+        return 1 + minDepth(root->left);
     }
 
-    return 1 + min(ld,rd);
+    return 1 + min(minDepth(root->right),minDepth(root->left));
 
     }
 };
