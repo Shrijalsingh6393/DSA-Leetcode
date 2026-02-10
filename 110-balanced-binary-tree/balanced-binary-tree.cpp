@@ -13,7 +13,7 @@ class Solution {
 public:
     int func(TreeNode* root){
         if(root==NULL){
-            return 0;
+            return true;
         }
 
         int l = func(root->left);
@@ -24,7 +24,7 @@ public:
 
         if(abs(l-r)>1){return -1;}
 
-        return 1 + max(l,r);
+        return 1+max(l,r);
     }
     bool isBalanced(TreeNode* root) {
         return func(root)!=-1;
