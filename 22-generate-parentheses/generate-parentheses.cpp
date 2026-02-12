@@ -3,7 +3,7 @@ public:
     void func(int n,int o,int c,string s,vector<string>&ans){
         if(s.size()==2*n){
             ans.push_back(s);
-            return;
+            // return;
         }
         if(o<n){
             func(n,o+1,c,s+"(",ans);
