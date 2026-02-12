@@ -21,23 +21,35 @@
  */
 class Solution {
 public:
-    TreeNode* func(vector<int>&v,int l,int r){
-        if(l>r){return NULL;}
-        int mid = (l+r)/2;
-        TreeNode* root = new TreeNode(v[mid]);
-        root->left = func(v,l,mid-1);
-        root->right = func(v,mid+1,r);
-
-        return root;
-    }
+    
     TreeNode* sortedListToBST(ListNode* head) {
-        ListNode* temp = head;
-        vector<int>v;
-        while(temp!=NULL){
-            v.push_back(temp->val);
-            temp = temp->next;   
+        if(head==NULL){
+            return NULL;
+        }
+        if(head->next==NULL){
+            return new TreeNode(head->val);
         }
 
-        return func(v,0,v.size()-1);
+        ListNode* slow = head;
+        ListNode* fast = head;
+        ListNode* temp = NULL;
+
+        while(fast!=NULL && fast->next!=NULL){
+            temp = slow;
+            slow = slow->next;
+            fast = fast->next->next;
+        }
+
+        if (temp) temp->next = NULL;
+
+        TreeNode* root = new TreeNode(slow->val);
+
+        if(slow!=head){
+            root->left = sortedListToBST(head);
+        }
+
+        root->right = sortedListToBST(slow->next);
+        
+        return root;
     }
 };
