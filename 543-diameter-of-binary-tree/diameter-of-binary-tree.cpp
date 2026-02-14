@@ -12,18 +12,17 @@
 class Solution {
 public:
     int ans = 0;
-    int func(TreeNode *root){
+    int func(TreeNode* root){
         if(root==NULL){
             return 0;
         }
-        int leftD = func(root->left);
-        int rightD = func(root->right);
+        int leftH = func(root->left);
+        int rightH = func(root->right);
 
-        ans = max(ans,leftD+rightD);
+        ans = max(ans,leftH+rightH);
 
-        return 1+max(leftD,rightD);
+        return 1 + max(leftH,rightH);
     }
-
     int diameterOfBinaryTree(TreeNode* root) {
         func(root);
         return ans;
