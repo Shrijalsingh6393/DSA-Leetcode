@@ -17,7 +17,6 @@ public:
         TreeNode* root = new TreeNode(nums[mid]);
         root->left = func(nums,l,mid-1);
         root->right = func(nums,mid+1,r);
-
         return root;
     }
     TreeNode* sortedArrayToBST(vector<int>& nums) {
