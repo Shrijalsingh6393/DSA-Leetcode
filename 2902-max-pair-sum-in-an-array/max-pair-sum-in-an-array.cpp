@@ -12,15 +12,14 @@ public:
     int maxSum(vector<int>& nums) {
         int n = nums.size();
         int ans = -1;
-        for(int i=0;i<n;i++){
-            int max1 = largestDigit(nums[i]);
-            for(int j=i+1;j<n;j++){
-                int max2 = largestDigit(nums[j]);
+        vector<int>maxDigit(10,-1);
 
-                if(max1==max2){
-                    ans = max(ans,nums[i]+nums[j]);
-                }
+        for(int el : nums){
+            int d = largestDigit(el);
+            if(maxDigit[d]!=-1){
+                ans = max(ans,el+maxDigit[d]);
             }
+            maxDigit[d] = max(maxDigit[d],el);
         }
 
         return ans;
