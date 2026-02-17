@@ -11,19 +11,12 @@
  */
 class Solution {
 public:
-    long long prev = LLONG_MIN;
-
+    long prev = LONG_MIN;
     bool isValidBST(TreeNode* root) {
-        if(root==NULL){
-            return true;
-        }
-        if(!isValidBST(root->left)){
-            return false;
-        }
-
-        if(root->val<=prev){return false;}
+        if(root==NULL){return true;}
+        if(!isValidBST(root->left)){return false;}  // inorder travesal  // left
+        if(root->val<=prev){return false;} // root
         prev = root->val;
-
-        return isValidBST(root->right);
+        return isValidBST(root->right);  // right
     }
 };
