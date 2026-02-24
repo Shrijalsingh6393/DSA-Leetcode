@@ -10,6 +10,6 @@ public:
             if(missing<k){s = mid+1;}
             else{e = mid-1;}
         }
-        return s+k;
+        return e+1+k;
     }
 };
