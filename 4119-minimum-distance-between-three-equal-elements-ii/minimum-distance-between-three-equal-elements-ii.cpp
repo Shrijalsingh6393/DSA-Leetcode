@@ -9,8 +9,8 @@ public:
 
         int ans = INT_MAX;
 
-        for(auto &it : mp){
-            vector<int> &v = it.second;
+        for(auto it : mp){
+            vector<int> v = it.second;
             if(v.size() < 3) continue;
 
             for(int i = 0; i + 2 < v.size(); i++){
