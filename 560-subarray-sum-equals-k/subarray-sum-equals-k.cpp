@@ -10,7 +10,6 @@ public:
 
         for(int i=0;i<n;i++){
             cs += nums[i];
-
             if(mp.find(cs-k)!=mp.end()){
                 count += mp[cs-k];
             }
@@ -19,3 +18,4 @@ public:
         return count;
     }
 };
+
